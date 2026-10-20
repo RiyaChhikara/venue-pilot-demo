@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#12302b">
+  <meta name="description" content="A human-reviewed wedding enquiry reply assistant demo using publicly available venue information.">
+  <title>Venue Pilot — No.11 demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topline"><span class="spark"></span> INBOUND LEAD RESPONSE · DEMO</div>
+  <header class="hero wrap">
+    <nav><a class="brand" href="#top" aria-label="Venue Pilot home"><span class="brand-mark">V</span> venue pilot</a><a class="nav-link" href="#demo">Try the demo <span>↘</span></a></nav>
+    <div class="hero-grid" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">A better first reply, ready for your team to review.</p>
+        <h1>Good enquiries deserve a thoughtful first reply.</h1>
+        <p class="hero-text">Turn a couple’s note and your venue facts into a warm, useful draft. See what is known, what needs a follow-up and where a person should step in.</p>
+        <a class="button primary" href="#demo">Try a sample enquiry <span>↓</span></a>
+        <p class="micro">Every reply stays a draft. Nothing is sent automatically.</p>
+      </div>
+      <div class="hero-card" aria-label="Example of the draft reply workflow">
+        <div class="card-top"><span class="tiny-label">THE FIRST REPLY</span><span class="status-dot">● HUMAN REVIEW</span></div>
+        <div class="mail-row"><span class="mail-icon">✳</span><div><strong>Wedding enquiry</strong><small>Orangery · 120 guests · date to check</small></div><span class="arrow">↗</span></div>
+        <div class="reply-preview"><span class="tiny-label">DRAFTED FROM VENUE FACTS</span><p>“Thanks for getting in touch, and congratulations to you both. The team can check your preferred date directly…”</p><div class="tags"><span>Availability flagged</span><span>Human approval</span></div></div>
+        <div class="card-footer"><span>01</span> ENQUIRY IN <i>→</i> <span>02</span> DRAFT OUT <i>→</i> <span>03</span> TEAM REVIEWS</div>
+      </div>
+    </div>
+    <div class="hero-note"><span>INBOUND LEAD-RESPONSE ASSISTANT</span><span>GTM-ADJACENT · NOT A FULL GTM AGENT</span></div>
+  </header>
+
+  <main>
+    <section class="strip"><div class="wrap strip-inner"><div><span class="strip-number">01</span><span>Venue facts guide the draft</span></div><div><span class="strip-number">02</span><span>Unknowns are called out</span></div><div><span class="strip-number">03</span><span>Your team approves every reply</span></div></div></section>
+
+    <section class="demo-section wrap" id="demo">
+      <div class="section-heading"><div><p class="eyebrow">INTERACTIVE DEMO · NO.11 CAVENDISH SQUARE</p><h2>Try it with a real enquiry.</h2></div><p>This independent prototype uses facts published on No.11’s website and 2026 wedding brochure. It has no live diary access.</p></div>
+      <div class="demo-grid">
+        <div class="composer panel">
+          <div class="panel-heading"><span>01</span><h3>Paste an enquiry</h3></div>
+          <label for="enquiry">A couple’s message</label>
+          <textarea id="enquiry" rows="9" placeholder="Hi, we’re planning a wedding for around 120 guests and would love to know if the Orangery is free next June…"></textarea>
+          <div class="examples"><span>Try an example</span><button type="button" class="example" data-example="availability">Date & availability</button><button type="button" class="example" data-example="access">Access question</button><button type="button" class="example" data-example="outside">Catering request</button></div>
+          <button type="button" id="draft-btn" class="button dark">Draft a reply <span>↗</span></button>
+          <p class="demo-note">Prototype engine: rule-based, using the venue facts below. No model is connected, and the text is not sent.</p>
+        </div>
+        <div class="result panel" aria-live="polite">
+          <div class="panel-heading"><span>02</span><h3>Reply for review</h3><span class="review-pill">DRAFT ONLY</span></div>
+          <div id="empty-state" class="empty-state"><div class="empty-icon">✳</div><p>Your draft will appear here, along with any questions to check with the venue team.</p></div>
+          <div id="result-content" class="hidden">
+            <div class="metrics"><div class="metric"><span>LEAD READINESS</span><strong id="score">—</strong><small>Details captured, not booking likelihood</small></div><div class="metric human-metric" id="human-metric"><span>HUMAN CHECK</span><strong id="human-status">—</strong><small id="human-summary">—</small></div></div>
+            <div class="answer-block"><span class="tiny-label">SUGGESTED REPLY</span><pre id="draft"></pre></div>
+            <div class="below-grid"><div><span class="tiny-label">MISSING DETAILS</span><ul id="missing-list"></ul></div><div><span class="tiny-label">WHY A PERSON MAY NEED TO STEP IN</span><ul id="reason-list"></ul></div></div>
+            <div class="source-line"><span class="tiny-label">GROUNDED IN</span><div id="sources"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise-section"><div class="wrap promise-grid"><div><p class="eyebrow">WHAT THIS AGENT IS</p><h2>One useful step in the venue sales journey.</h2></div><div class="promise-copy"><p>This is an <strong>inbound lead-response assistant</strong>, sometimes called a wedding enquiry drafting agent. It supports the first response to a prospective couple, so it is GTM-adjacent.</p><p>It is not a broad GTM agent: it does not find prospects, run campaigns, manage a pipeline, check dates or send messages. A person reviews every draft.</p><div class="promise-callout"><span>THE PROMISE</span><strong>A faster, more consistent first draft, with uncertainty visible before it reaches a couple.</strong></div></div></div></section>
+
+    <section class="facts-section wrap"><div class="section-heading"><div><p class="eyebrow">PUBLIC INFORMATION · NOT VENUE-APPROVED</p><h2>What the demo knows.</h2></div><a class="source-link" href="https://www.11cavendishsq.com/weddings/" target="_blank" rel="noreferrer">Open No.11’s wedding page ↗</a></div>
+      <div class="fact-grid">
+        <article><span class="fact-num">01</span><h3>Rooms have different limits</h3><p>Orangery: 144 ceremony, 140 wedding breakfast, 280 reception. Garden Room: 100 ceremony and reception. Burdett Suite: 200 ceremony, 240 wedding breakfast, 300 reception.</p></article>
+        <article><span class="fact-num">02</span><h3>Prices need a team check</h3><p>The 2026 brochure lists £165 + VAT per person for 100–150 guests and £155 + VAT above 150. The Garden Room page says packages from £155 + VAT, minimum 100. The pages differ.</p></article>
+        <article><span class="fact-num">03</span><h3>No live diary connection</h3><p>Date availability and viewing times must be checked with No.11’s team. The demo does not invent a slot or imply a date is free.</p></article>
+        <article><span class="fact-num">04</span><h3>People handle exceptions</h3><p>Dietary specifics, accessibility needs, policy questions and contract terms are surfaced for a person to confirm.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><div><a class="brand" href="#top"><span class="brand-mark">V</span> venue pilot</a><p>A better first reply, ready for your team to review.</p></div><div class="independent"><strong>Independent demo · not affiliated with No.11 Cavendish Square</strong><span>Built from public information. Facts and sample replies have not been reviewed or approved by the venue.</span></div></div><div class="wrap footer-bottom"><span>Prototype engine is rule-based. No model, email or diary is connected.</span><a href="https://www.11cavendishsq.com/faq/" target="_blank" rel="noreferrer">Fact sources ↗</a></div></footer>
+  <script src="agent.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
